@@ -44,7 +44,7 @@ if ( ! function_exists( 'mjstheme_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'mjstheme' ),
+			'primary' => esc_html__( 'Primary', 'mjstheme' ),
 		) );
 
 		/*
@@ -83,6 +83,11 @@ if ( ! function_exists( 'mjstheme_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'mjstheme_setup' );
 
+function mjstheme_add_editor_style(){
+	add_editor_style('dist/css/editor-style.css');
+}
+add_action('admin_init', 'mjstheme_add_editor_style');
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -90,39 +95,37 @@ add_action( 'after_setup_theme', 'mjstheme_setup' );
  *
  * @global int $content_width
  */
-function mjstheme_content_width() {
+fun ction mjstheme_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'mjstheme_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'mjstheme_content_width', 1140 );
 }
 add_action( 'after_setup_theme', 'mjstheme_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function mjstheme_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'mjstheme' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'mjstheme' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'mjstheme_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
 function mjstheme_scripts() {
+	
+	wp_enqueue_style('mjstheme-bs-css', get_template_directory_uri(). '/dist/css/bootstrap.min.css');
+
+	wp_enqueue_style('mjstheme-fontawesome', get_template_directory_uri(). '/fonts/font-awesome/css/fontawesome.min.css');
+
 	wp_enqueue_style( 'mjstheme-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'mjstheme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/esm/popper.min.js', false,'', true);
+
+	wp_enqueue_script('popper');
+
+	wp_enqueue_script('mjstheme-tether',get_template_directory_uri(). '/src/js/tether.min.js', array(), true);
+
+	wp_enqueue_script('mjstheme-bootstrap', get_template_directory_uri(). '/src/js/bootstrap.min.js', array('jquery'), true);
+
+	wp_enqueue_script('mjstheme-bootstrap-hover', get_template_directory_uri(). '/src/js/bootstrap-hover.js', array('jquery'), true);
+
+	wp_enqueue_script('mjstheme-nav-scroll', get_template_directory_uri(). '/src/js/nav-scroll.js', array('jquery'), true);
 
 	wp_enqueue_script( 'mjstheme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -153,11 +156,23 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Widgets additions.
+ */
+require get_template_directory() . '/inc/widgets.php';
+
+/**
+ * Bootstrap navwalker file.
+ */
+require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
+
+
 
 /**
  * Load WooCommerce compatibility file.
