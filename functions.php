@@ -111,7 +111,7 @@ add_action( 'after_setup_theme', 'mjstheme_content_width', 0 );
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function mjstheme_widgets_init() {
+/*function mjstheme_widgets_init() {
 	register_sidebar( array(
 		'name'          => esc_html__( 'Right Sidebar', 'mjstheme' ),
 		'id'            => 'right-sidebar',
@@ -122,7 +122,7 @@ function mjstheme_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'mjstheme_widgets_init' );
+add_action( 'widgets_init', 'mjstheme_widgets_init' );*/
 
 /**
  * Enqueue scripts and styles.
@@ -176,6 +176,11 @@ require get_template_directory() . '/inc/customizer.php';
  * widgets file.
  */
 require get_template_directory() . '/inc/widgets.php';
+
+/**
+ * Bootstrap navwalker file.
+ */
+require get_template_directory() . '/inc/bootstrap-wp-navwalker.php';
 
 /**
  * Load Jetpack compatibility file.
