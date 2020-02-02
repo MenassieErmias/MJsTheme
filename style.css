@@ -135,8 +135,22 @@ hr {
 	margin-bottom: 1.5em;
 }
 
+h1.entry-title, h2.entry-title{
+	margin-top: 1.5em;
+}
+
 .site-info{
 	text-align: center;
+}
+
+.site-description{
+	font-size: 16px;
+	margin: 10px 0 0;
+	letter-spacing: 1px;
+}
+
+#masthead{
+	margin-bottom: 30px;
 }
 
 p.site-title, h1.site-title {
