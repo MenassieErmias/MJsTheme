@@ -135,6 +135,10 @@ hr {
 	margin-bottom: 1.5em;
 }
 
+.site-info{
+	text-align: center;
+}
+
 p.site-title, h1.site-title {
 	margin: 10px 0 0 -2px;
 	padding: 0;
@@ -357,8 +361,27 @@ a:hover, a:active {
 
 
 .top, .top-link{
-	
+	color: #111;
+	position: fixed;
+	z-index: 999;
+	bottom: 20px;
+	right: 20px;
+	width: 40px;
+	height: 40px;
+	font-size: large;
+	font-weight: 700;
+	line-height: 40px;
+	text-align: center;
+	text-transform: uppercase;
+	opacity: 9;
+	border: none;
 }
+
+.top:hover{
+	opacity: 1;
+	text-decoration: none;
+}
+
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
