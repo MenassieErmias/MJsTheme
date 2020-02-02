@@ -212,6 +212,9 @@ table {
 	width: 100%;
 }
 
+footer{
+	margin-top: 20px;
+}
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -290,6 +293,8 @@ textarea:focus {
 
 select {
 	border: 1px solid #ccc;
+	padding: 10px;
+	width: 100%;
 }
 
 textarea {
