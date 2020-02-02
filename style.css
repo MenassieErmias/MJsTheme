@@ -169,6 +169,10 @@ p.site-title, h1.site-title {
 	text-decoration: none;
 }
 
+video{
+	max-width: 100%;
+	height: auto;
+}
 ul, ol {
 	margin: 0 0 1.5em 3em;
 }
