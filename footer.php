@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package MJsTheme
+ * @package meneth
  */
 
 ?>
@@ -15,16 +15,16 @@
 
 	<footer id="colophon" class="site-footer row">
 		<div class="site-info col-md-12">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'mjstheme' ) ); ?>">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'meneth' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly Powered by %s', 'mjstheme' ), 'WordPress' );
+				printf( esc_html__( 'Proudly Powered by %s', 'meneth' ), 'WordPress' );
 				?>
 			</a>
 			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'MJsTheme' ), 'mjstheme', '<a href="http://underscores.me/">Menassie Ermias</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'meneth' ), 'meneth', '<a href="http://underscores.me/">Menassie Ermias</a>' );
 				?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

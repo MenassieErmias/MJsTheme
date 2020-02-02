@@ -1,4 +1,4 @@
-=== MJsTheme ===
+=== meneth ===
 
 Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
@@ -9,7 +9,7 @@ Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called MJsTheme.
+A starter theme called meneth.
 
 == Description ==
 
@@ -25,7 +25,7 @@ Wordpress Theme
 
 = Does this theme support any plugins? =
 
-MJsTheme includes support for Infinite Scroll in Jetpack.
+meneth includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 

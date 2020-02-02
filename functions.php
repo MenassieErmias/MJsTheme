@@ -1,13 +1,13 @@
 <?php
 /**
- * MJsTheme functions and definitions
+ * meneth functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package MJsTheme
+ * @package meneth
  */
 
-if ( ! function_exists( 'mjstheme_setup' ) ) :
+if ( ! function_exists( 'meneth_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -15,14 +15,14 @@ if ( ! function_exists( 'mjstheme_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function mjstheme_setup() {
+	function meneth_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on MJsTheme, use a find and replace
-		 * to change 'mjstheme' to the name of your theme in all the template files.
+		 * If you're building a theme based on meneth, use a find and replace
+		 * to change 'meneth' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'mjstheme', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'meneth', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -44,7 +44,7 @@ if ( ! function_exists( 'mjstheme_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary', 'mjstheme' ),
+			'primary' => esc_html__( 'Primary', 'meneth' ),
 		) );
 
 		/*
@@ -60,7 +60,7 @@ if ( ! function_exists( 'mjstheme_setup' ) ) :
 		) );
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'mjstheme_custom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( 'meneth_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
@@ -81,15 +81,15 @@ if ( ! function_exists( 'mjstheme_setup' ) ) :
 		) );
 	}
 endif;
-add_action( 'after_setup_theme', 'mjstheme_setup' );
+add_action( 'after_setup_theme', 'meneth_setup' );
 
-function mjstheme_add_editor_style(){
+function meneth_add_editor_style(){
 
 	add_editor_style('assets/css/editor-style.css');
 
 }
 
-add_action('admin_init', 'mjstheme_add_editor_style');
+add_action('admin_init', 'meneth_add_editor_style');
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -98,59 +98,59 @@ add_action('admin_init', 'mjstheme_add_editor_style');
  *
  * @global int $content_width
  */
-function mjstheme_content_width() {
+function meneth_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'mjstheme_content_width', 1140 );
+	$GLOBALS['content_width'] = apply_filters( 'meneth_content_width', 1140 );
 }
-add_action( 'after_setup_theme', 'mjstheme_content_width', 0 );
+add_action( 'after_setup_theme', 'meneth_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-/*function mjstheme_widgets_init() {
+/*function meneth_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Right Sidebar', 'mjstheme' ),
+		'name'          => esc_html__( 'Right Sidebar', 'meneth' ),
 		'id'            => 'right-sidebar',
-		'description'   => esc_html__( 'Add widgets here.', 'mjstheme' ),
+		'description'   => esc_html__( 'Add widgets here.', 'meneth' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'mjstheme_widgets_init' );*/
+add_action( 'widgets_init', 'meneth_widgets_init' );*/
 
 /**
  * Enqueue scripts and styles.
  */
-function mjstheme_scripts() {
-	wp_enqueue_style('mjstheme-bs-css' , get_template_directory_uri() .'/assets/css/bootstrap.min.css' );
+function meneth_scripts() {
+	wp_enqueue_style('meneth-bs-css' , get_template_directory_uri() .'/assets/css/bootstrap.min.css' );
 
-	wp_enqueue_style( 'mjstheme-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'meneth-style', get_stylesheet_uri() );
 
 	wp_register_script('popper', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js', false ,'', true);
 
 	wp_enqueue_script( 'popper');
 
-	wp_enqueue_script( 'mjstheme-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'meneth-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '20151215', true );
 
-	wp_enqueue_script( 'mjstheme-bootstrap-hover', get_template_directory_uri() . '/assets/js/bootstrap-hover.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'meneth-bootstrap-hover', get_template_directory_uri() . '/assets/js/bootstrap-hover.js', array('jquery'), '20151215', true );
 
-	wp_enqueue_script( 'mjstheme-nav-scroll', get_template_directory_uri() . '/assets/js/nav-scroll.js', array('jquery'), '20151215', true );
+	wp_enqueue_script( 'meneth-nav-scroll', get_template_directory_uri() . '/assets/js/nav-scroll.js', array('jquery'), '20151215', true );
 
-	wp_enqueue_script( 'mjstheme-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'meneth-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20151215', true );
 
-	wp_enqueue_script( 'mjstheme-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'meneth-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'mjstheme_scripts' );
+add_action( 'wp_enqueue_scripts', 'meneth_scripts' );
 
 /**
  * Implement the Custom Header feature.

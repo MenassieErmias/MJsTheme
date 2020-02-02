@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package MJsTheme
+ * @package meneth
  */
 
 ?>
@@ -22,14 +22,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				mjstheme_posted_on();
-				mjstheme_posted_by();
+				meneth_posted_on();
+				meneth_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<?php mjstheme_post_thumbnail(); ?>
+	<?php meneth_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php
@@ -37,7 +37,7 @@
 		the_content( sprintf(
 			wp_kses(
 				/* translators: %s: Name of current post. Only visible to screen readers */
-				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'mjstheme' ),
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'meneth' ),
 				array(
 					'span' => array(
 						'class' => array(),
@@ -50,14 +50,14 @@
 			the_excerpt();
 		}
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'mjstheme' ),
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'meneth' ),
 			'after'  => '</div>',
 		) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php mjstheme_entry_footer(); ?>
+		<?php meneth_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
 <hr>

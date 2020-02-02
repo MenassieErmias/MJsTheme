@@ -5,15 +5,24 @@
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 
-function mjstheme_widgets_init() {
+function meneth_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Right Sidebar', 'mjstheme' ),
+		'name'          => esc_html__( 'Right Sidebar', 'meneth' ),
 		'id'            => 'right-sidebar',
-		'description'   => esc_html__( 'Add widgets here.', 'mjstheme' ),
+		'description'   => esc_html__( 'Add widgets here.', 'meneth' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</section>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
+		'name'          => esc_html__( 'left Sidebar', 'meneth' ),
+		'id'            => 'left-sidebar',
+		'description'   => esc_html__( 'Add widgets here.', 'meneth' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'mjstheme_widgets_init' );
+add_action( 'widgets_init', 'meneth_widgets_init' );

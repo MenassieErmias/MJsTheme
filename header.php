@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package MJsTheme
+ * @package meneth
  */
 
 ?>
@@ -22,7 +22,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site container">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'mjstheme' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'meneth' ); ?></a>
 
 	<header id="masthead" class="site-header">
 	<nav id="menu" class="navbar navbar-expand-md navbar-light" role="navigation">
@@ -38,10 +38,10 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-			$mjstheme_description = get_bloginfo( 'description', 'display' );
-			if ( $mjstheme_description || is_customize_preview() ) :
+			$meneth_description = get_bloginfo( 'description', 'display' );
+			if ( $meneth_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $mjstheme_description; /* WPCS: xss ok. */ ?></p>
+				<p class="site-description"><?php echo $meneth_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" 

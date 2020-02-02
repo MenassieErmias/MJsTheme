@@ -4,7 +4,7 @@
  * Template Post Type : Post
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package MJsTheme
+ * @package meneth
  */
 
 get_header();
