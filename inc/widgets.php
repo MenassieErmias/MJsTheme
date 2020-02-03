@@ -10,7 +10,7 @@ function meneth_widgets_init() {
 		'name'          => esc_html__( 'Right Sidebar', 'meneth' ),
 		'id'            => 'right-sidebar',
 		'description'   => esc_html__( 'Add widgets here.', 'meneth' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'before_widget' => '<section id="%1$s" class="widget %2$s border border-dark rounded">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',

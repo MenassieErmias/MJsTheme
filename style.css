@@ -134,6 +134,12 @@ hr {
 	height: 1px;
 	margin-bottom: 1.5em;
 }
+.widget-area{
+	padding: 20px;
+}
+.widget-area .border .border-dark{
+	border-width: 10px;
+}
 
 .carousel-inner img {
 	width: 100%;
@@ -141,7 +147,9 @@ hr {
 }
 h1.entry-title, h2.entry-title{
 	margin-top: 1.5em;
+	
 }
+
 
 .site-info{
 	text-align: center;
